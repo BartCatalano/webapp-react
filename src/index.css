@@ -1,0 +1,51 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul li, a {
+  text-decoration: none;
+  color: black;
+  }
+/* UTILITY */
+.container{
+  margin: 0 auto;
+  max-width: 1200px;
+  width: 80%;
+  }
+
+.row{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.col{
+  margin: 5px;
+  padding: 5px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* HEADER */
+.HeaderLayout{
+  background-color: lightcyan;
+  padding-top: 25px;
+  border: 1px solid black;
+  display: flex;
+  justify-content: space-between;
+  height: 100px;
+  
+}
+
+.linkButton{
+border: 1px solid black;  
+background-color: lightcoral;
+margin: 5px;
+padding: 3px;
+
+
+}
+.active{
+  background-color: lightgreen;
+}

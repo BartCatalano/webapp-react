@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import AppCard from "../components/AppCard";
+
 
 
 
@@ -20,9 +20,6 @@ function MoviePage() {
         }
         axios.get("http://localhost:3000", { params }).then((resp) => {
             setMovies(resp.data.data)
-
-
-
         });
     };
 
@@ -49,7 +46,10 @@ function MoviePage() {
 
     return (
         <>
-            <section className="container">
+
+            <div className="searchZone">
+                <div>
+                    <strong>Cerca il Tuo film Preferito!  </strong></div>
                 <div>
                     <input
                         value={search}
@@ -57,39 +57,48 @@ function MoviePage() {
                         type="search" />
 
                     <button onClick={getMovies}>Cerca</button>
-                </div>
+                </div></div>
 
-                <div className="row">
-                    <div className="col">
-                        {/* colonna sinistra con elenco film */}
-                        {movies.map((curMovie, id) =>
-                            <div key={curMovie.id}>
+            {/* Elenco film zone */}
 
-                                <button onClick={() => movieSelectedButton(curMovie.id)}>{curMovie.title}</button>
-                            </div>
+            <section className="">
+                <div className="container">
+                    <div className="row">
+                        <div className="col">
+                            <h2>Elenco Film Disponibili</h2>
+                            {/* colonna sinistra con elenco film */}
+                            {movies.map((curMovie, id) =>
+                                <div key={curMovie.id}>
 
-                        )}
+                                    <button className="buttonFilm" onClick={() => movieSelectedButton(curMovie.id)}>{curMovie.title}</button>
+                                </div>
 
-                    </div>
-                    {/* colonna destra con film selezionato */}
-                    <div className="col">
+                            )}
 
-                        {selectedMovie ? (
-                            <div>
-                                <h2>{selectedMovie.title}</h2>
-                                <div>{selectedMovie.genre}</div>
-                                <div>{selectedMovie.director}</div>
-                                <p><strong>Descrizione:</strong> {selectedMovie.abstract}</p>
-                                
-                            </div>
-                        ) : (
-                            <p>Seleziona un film per vedere i dettagli</p>
-                        )}
+                        </div>
+                        {/* colonna destra con film selezionato */}
+                        <div className="col">
+
+                            {selectedMovie ? (
+                                <div>
+                                    <div className="titleCard"> <h2>{selectedMovie.title}</h2></div>
+                                    <div ><img className="imgNotFound" src="https://cdn.pixabay.com/photo/2016/10/25/23/54/not-found-1770320_1280.jpg" alt="Not Found" /> </div>
+                                    <div className="sectionRow"><strong>Genere:</strong>  {selectedMovie.genre}</div>
+                                    <div className="sectionRow"><strong>Regista: </strong>  {selectedMovie.director}</div>
+                                    <div className="sectionRow">
+                                        <p><strong>Descrizione:</strong> {selectedMovie.abstract}</p></div>
+
+                                </div>
+                            ) : (
+                                <div className="noSelected">
+                                    <p>Seleziona un film per vedere i dettagli</p>
+                                </div>
+                            )}
 
 
 
-                    </div>
-                </div>
+                        </div>
+                    </div></div>
             </section>
         </>
     )

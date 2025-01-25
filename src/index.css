@@ -13,53 +13,110 @@ ul li, a {
   max-width: 1200px;
   width: 80%;
   }
-
-
-
-
+  
 /* HEADER */
 .rowHeader{
-  width: 100%;
+width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+ 
 }
 .colHeader{
-  margin: 5px;
-  padding: 5px;
   display: flex;
   flex-wrap: wrap;
+  padding-top: 50px;
+}
+.logo{
+  height: 150px;
+  padding: 5px;
 }
 
 
 .HeaderLayout{
-  background-color: lightcyan;
-  padding-top: 25px;
+  background-color:#f8fafb;
+  background-image: url(https://cdn.pixabay.com/photo/2016/06/15/08/23/tape-1458416_1280.png) ;
+  background-size: 50%;
+  background-repeat: repeat;
   border: 1px solid black;
-  display: flex;
-  justify-content: space-between;
-  height: 100px;
-  
+  height: 150px;
+  width: 100%;
 }
 
 .linkButton{
 border: 1px solid black;  
-background-color: lightcoral;
+background-color: white;
 margin: 5px;
 padding: 3px;
 
 
 }
 .active{
-  background-color: lightgreen;
+  background-color: #f2f5f8;
 }
 
 /* moviePage */
+.pageSection{
+  background-color: #f8fafb;
+  padding-top: 40px;
+}
 .row{
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-
 }
 .col{
+  height: 600px;
   width:calc(100% / 2);
+  
+}
+
+.searchZone{
+  
+  height: 60px;
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  border: 1px solid black;
+}
+
+/* elenco film layout */
+.buttonFilm{
+ 
+  height: 50px;
+  width: 60%;
+  background-color: #f2f5f8;
+  border: none;
+  font-family: cursive;
+
+}
+
+/* cardLayout */
+.titleCard{
+  margin:2px;
+  padding:10px;
+  border: 2px solid black;
+  text-align: center;
+  background-color: #f2f5f8;
+}
+.noSelected{
+  text-align: center;
+  margin-top: 150px;
+  font-size: large;
+}
+.sectionRow{
+  height: 25px;
+  width: 100%;
+
+}
+.imgNotFound{
+  height:300px;
+  width: 100%;
+}
+
+/* homepage layout */
+.homePageLayout{
+  height: 600px;
+  text-align: center;
+  
 }

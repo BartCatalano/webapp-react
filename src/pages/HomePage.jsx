@@ -1,7 +1,8 @@
 function HomePage ( ) {
 return(
     <>
-    <h1>sono homepage</h1>
+    <div className="homePageLayout">
+    <h1>sono homepage</h1></div>
     </>
 )
 

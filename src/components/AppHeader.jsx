@@ -17,10 +17,12 @@ function AppHeader() {
     return (
         <>
             <header className="HeaderLayout" >
-                <div className="container">
+                <div>
                 <div className="rowHeader">
-                    <h2>Logo Pagina</h2>
-                    <h1>Titolo Pagina</h1>
+                    <div ><img className="logo" src="https://cdn.pixabay.com/photo/2022/09/08/13/59/youtube-7441044_1280.png" alt="" />
+                    </div>
+                    
+                    
                     <div className="colHeader">
                         {navLinks.map((curLink, index) => (
                             <div key={index}>

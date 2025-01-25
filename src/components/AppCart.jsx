@@ -1,10 +1,13 @@
-function AppCard () {
+function AppCard ({movies}) {
  
 
     return (
         <>
+<div>{movies.title}</div>
+<div>{movies.genre}</div>
+<div>{movies.director}</div>
+<div>{movies.release_year}</div>
 
-<h1>sono appcard</h1>
         </>
     )
 }

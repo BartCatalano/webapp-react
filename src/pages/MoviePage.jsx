@@ -22,14 +22,15 @@ function MoviePage () {
      
 return(
 <>
+<section className="container">
 {movies.map((curMovie, id) =>
 <div key={curMovie.id}>
-    {curMovie.title}
-    <AppCard />
+    
+    <AppCard movies={curMovie} />
 </div>
 
 )}
-
+</section>
 </>
 )
 };

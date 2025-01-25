@@ -14,20 +14,23 @@ ul li, a {
   width: 80%;
   }
 
-.row{
+
+
+
+/* HEADER */
+.rowHeader{
   width: 100%;
   display: flex;
   justify-content: space-between;
 }
-
-.col{
+.colHeader{
   margin: 5px;
   padding: 5px;
   display: flex;
   flex-wrap: wrap;
 }
 
-/* HEADER */
+
 .HeaderLayout{
   background-color: lightcyan;
   padding-top: 25px;
@@ -48,4 +51,15 @@ padding: 3px;
 }
 .active{
   background-color: lightgreen;
+}
+
+/* moviePage */
+.row{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+
+}
+.col{
+  width:calc(100% / 2);
 }

@@ -18,10 +18,10 @@ function AppHeader() {
         <>
             <header className="HeaderLayout" >
                 <div className="container">
-                <div className="row">
+                <div className="rowHeader">
                     <h2>Logo Pagina</h2>
                     <h1>Titolo Pagina</h1>
-                    <div className="col">
+                    <div className="colHeader">
                         {navLinks.map((curLink, index) => (
                             <div key={index}>
                                 <NavLink

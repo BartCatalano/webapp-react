@@ -16,6 +16,9 @@ ul li, a {
   img{
     max-width: 100%;
   }
+  .mt20{
+    margin-top: 20px;
+  }
   
 /* HEADER */
 .rowHeader{
@@ -132,10 +135,7 @@ padding: 3px;
   width: 100%;
 
 }
-.imgNotFound{
-  height:300px;
-  width: 100%;
-}
+
 
 /* homepage layout */
 .homePageLayout{
@@ -156,3 +156,46 @@ height: 400px;
   font-family:  Verdana, Geneva, Tahoma, sans-serif;
   color: white;
 }
+/* Review layout */
+.reviewSection{
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  
+}
+.rowReview{
+  display: flex;
+  flex-wrap: wrap;
+
+}
+.colReview{
+  width:calc(100% / 4);
+  
+  margin: 4px;
+  height: 250px;
+  background-image: url(https://cdn.pixabay.com/photo/2015/06/22/23/21/filmklappe-818198_1280.jpg);
+  color: white;
+  background-size: cover;
+}
+/* card review */
+.titleRev{
+  
+  height: 50px;
+  text-align: center;
+  padding: 5px;
+  padding-top: 15px;
+  color: black;
+}
+.textRev{
+  background-image: url();
+  background-size: cover;
+  height: 100px;
+  text-align: center;
+  padding-top: 50px;
+}
+.pdt15{
+ padding-top: 15px;
+}
+

@@ -31,7 +31,8 @@ function MoviePage() {
     const getReviews = (id) => {
         axios.get(`http://localhost:3000/${id}`).then((resp) => {
             setReviews(resp.data.data.review); // Salviamo le recensioni nello stato
-            
+           console.log(resp.data.data.review);
+           
 
         });
     };
@@ -70,7 +71,7 @@ function MoviePage() {
                             {movies.map((curMovie, id) =>
                                 <div key={curMovie.id}>
 
-                                    <button className="buttonFilm" onClick={() => movieSelectedButton(curMovie.id)}>{curMovie.title}</button>
+                                    <button className="buttonFilm" onClick={() => movieSelectedButton(curMovie.id)}> &#10094; {curMovie.title} &#10095; </button>
                                 </div>
 
                             )}
@@ -99,6 +100,25 @@ function MoviePage() {
 
                         </div>
                     </div></div>
+    {/* recensioni con hoover */}
+
+    <section className="reviewSection">
+        <div className="rowReview mt20">
+            {reviews.map((curReview, id)=>
+            <div className="colReview" key={id}>
+            <div className="titleRev">  </div>
+            
+            <div className="textRev"> Recensione fatta da:  {curReview.name}
+                <div className="pdt15" >  Commento:  {curReview.text}</div> 
+                <div className="pdt15"> voto: {curReview.vote}</div></div>
+            
+            </div>
+
+
+            )}
+        </div>
+    </section>
+
             </section>
         </>
     )

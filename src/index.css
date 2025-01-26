@@ -13,6 +13,9 @@ ul li, a {
   max-width: 1200px;
   width: 80%;
   }
+  img{
+    max-width: 100%;
+  }
   
 /* HEADER */
 .rowHeader{
@@ -79,7 +82,20 @@ padding: 3px;
   align-items: center;
   border: 1px solid black;
 }
-
+.imgContainer{
+  height: 480px;
+  width: 430px;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(https://cdn.pixabay.com/photo/2015/05/21/23/15/movie-778063_960_720.jpg) ;
+  background-size: cover;
+}
+.imgDettails{
+  height: 450px;
+  
+}
 /* elenco film layout */
 .buttonFilm{
  
@@ -90,7 +106,10 @@ padding: 3px;
   font-family: cursive;
 
 }
-
+.mMovies{
+  margin-top: 100px;
+  margin-bottom: 20px;
+}
 /* cardLayout */
 .titleCard{
   margin:2px;
@@ -98,11 +117,15 @@ padding: 3px;
   border: 2px solid black;
   text-align: center;
   background-color: #f2f5f8;
+  width: 430px;
 }
 .noSelected{
+  height: 480px;
+  width: 430px;
   text-align: center;
-  margin-top: 150px;
+ background-size: 480px;
   font-size: large;
+  background-image: url(https://cdn.pixabay.com/photo/2016/04/01/10/56/camera-1300107_1280.png);
 }
 .sectionRow{
   height: 25px;

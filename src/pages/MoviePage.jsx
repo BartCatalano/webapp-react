@@ -30,8 +30,8 @@ function MoviePage() {
     // Funzione per recuperare le recensioni di un film selezionato
     const getReviews = (id) => {
         axios.get(`http://localhost:3000/${id}`).then((resp) => {
-            setReviews(resp.data.data); // Salviamo le recensioni nello stato
-            console.log(resp.data.data);
+            setReviews(resp.data.data.review); // Salviamo le recensioni nello stato
+            console.log(resp.data.data.review);
 
         });
     };
@@ -49,7 +49,7 @@ function MoviePage() {
 
             <div className="searchZone">
                 <div>
-                    <strong>Cerca il Tuo film Preferito!  </strong></div>
+                    <strong>Cerca il Tuo film Preferito!</strong></div>
                 <div>
                     <input
                         value={search}
@@ -65,7 +65,7 @@ function MoviePage() {
                 <div className="container">
                     <div className="row">
                         <div className="col">
-                            <h2>Elenco Film Disponibili</h2>
+                            <h2 className="mMovies">Elenco Film Disponibili</h2>
                             {/* colonna sinistra con elenco film */}
                             {movies.map((curMovie, id) =>
                                 <div key={curMovie.id}>
@@ -82,7 +82,7 @@ function MoviePage() {
                             {selectedMovie ? (
                                 <div>
                                     <div className="titleCard"> <h2>{selectedMovie.title}</h2></div>
-                                    <div ><img className="imgNotFound" src="https://cdn.pixabay.com/photo/2016/10/25/23/54/not-found-1770320_1280.jpg" alt="Not Found" /> </div>
+                                   <div className="imgContainer"> <img className="imgDettails" src={`http://localhost:3000/${selectedMovie.image}`} alt={selectedMovie.title} /> </div>
                                     <div className="sectionRow"><strong>Genere:</strong>  {selectedMovie.genre}</div>
                                     <div className="sectionRow"><strong>Regista: </strong>  {selectedMovie.director}</div>
                                     <div className="sectionRow">
@@ -91,7 +91,7 @@ function MoviePage() {
                                 </div>
                             ) : (
                                 <div className="noSelected">
-                                    <p>Seleziona un film per vedere i dettagli</p>
+                                    
                                 </div>
                             )}
 

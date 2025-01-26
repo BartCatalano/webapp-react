@@ -82,7 +82,7 @@ function MoviePage() {
                             {selectedMovie ? (
                                 <div>
                                     <div className="titleCard"> <h2>{selectedMovie.title}</h2></div>
-                                   <div className="imgContainer"> <img className="imgDettails" src={`http://localhost:3000/${selectedMovie.image}`} alt={selectedMovie.title} /> </div>
+                                    <div className="imgContainer"> <img className="imgDettails" src={`http://localhost:3000/${selectedMovie.image}`} alt={selectedMovie.title} /> </div>
                                     <div className="sectionRow"><strong>Genere:</strong>  {selectedMovie.genre}</div>
                                     <div className="sectionRow"><strong>Regista: </strong>  {selectedMovie.director}</div>
                                     <div className="sectionRow">
@@ -91,7 +91,7 @@ function MoviePage() {
                                 </div>
                             ) : (
                                 <div className="noSelected">
-                                    
+
                                 </div>
                             )}
 

@@ -31,7 +31,7 @@ function MoviePage() {
     const getReviews = (id) => {
         axios.get(`http://localhost:3000/${id}`).then((resp) => {
             setReviews(resp.data.data.review); // Salviamo le recensioni nello stato
-            console.log(resp.data.data.review);
+            
 
         });
     };

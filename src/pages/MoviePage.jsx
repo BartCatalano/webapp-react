@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 
 
@@ -10,7 +11,7 @@ function MoviePage() {
     // creo usestate per la selezione del film da mostrare
     const [selectedMovie, setSelectedMovie] = useState(null)
     // creo usestate per prendere le recensioni
-    const [reviews, setReviews] = useState([]);
+    // 
 
 
     const getMovies = () => {
@@ -18,7 +19,7 @@ function MoviePage() {
         if (search.length > 0) {
             params.search = search;
         }
-        axios.get("http://localhost:3000", { params }).then((resp) => {
+        axios.get("http://localhost:3000").then((resp) => {
             setMovies(resp.data.data)
         });
     };
@@ -27,24 +28,14 @@ function MoviePage() {
         getMovies()
     }, []);
 
-    // Funzione per recuperare le recensioni di un film selezionato
-    const getReviews = (id) => {
-        axios.get(`http://localhost:3000/${id}`).then((resp) => {
-            setReviews(resp.data.data.review); // Salviamo le recensioni nello stato
-           console.log(resp.data.data.review);
-           
-
-        });
-    };
-
+    
     const movieSelectedButton = (id) => {
         const movie = movies.find((f) => f.id === id);
         setSelectedMovie(movie)
-        getReviews(id);
+       
     }
 
-
-
+   
     return (
         <>
 
@@ -82,12 +73,14 @@ function MoviePage() {
 
                             {selectedMovie ? (
                                 <div>
-                                    <div className="titleCard"> <h2>{selectedMovie.title}</h2></div>
+                                    <div className="titleCard"> <h2>{selectedMovie.title}</h2> <Link className="buttonDettails" to={`/details/${selectedMovie.id}`} >Dettagli</Link></div>
                                     <div className="imgContainer"> <img className="imgDettails" src={`http://localhost:3000/${selectedMovie.image}`} alt={selectedMovie.title} /> </div>
                                     <div className="sectionRow"><strong>Genere:</strong>  {selectedMovie.genre}</div>
-                                    <div className="sectionRow"><strong>Regista: </strong>  {selectedMovie.director}</div>
+                                    <div className="sectionRow"><strong>Regista: </strong>  {selectedMovie.director} </div>
                                     <div className="sectionRow">
                                         <p><strong>Descrizione:</strong> {selectedMovie.abstract}</p></div>
+
+                                        
 
                                 </div>
                             ) : (
@@ -100,24 +93,7 @@ function MoviePage() {
 
                         </div>
                     </div></div>
-    {/* recensioni con hoover */}
 
-    <section className="reviewSection">
-        <div className="rowReview mt20">
-            {reviews.map((curReview, id)=>
-            <div className="colReview" key={id}>
-            <div className="titleRev">  </div>
-            
-            <div className="textRev"> Recensione fatta da:  {curReview.name}
-                <div className="pdt15" >  Commento:  {curReview.text}</div> 
-                <div className="pdt15"> voto: {curReview.vote}</div></div>
-            
-            </div>
-
-
-            )}
-        </div>
-    </section>
 
             </section>
         </>
@@ -127,4 +103,3 @@ function MoviePage() {
 export default MoviePage;
 
 
-{/* <AppCard movies={curMovie} /> */ }

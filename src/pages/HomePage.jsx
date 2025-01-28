@@ -7,6 +7,8 @@ function HomePage() {
     // Stato per l'indice dell'immagine corrente
     const [currentIndex, setCurrentIndex] = useState(0);
 
+    
+
     useEffect(() => {
         // Funzione per ottenere le immagini
         const getImage = () => {
@@ -51,7 +53,7 @@ function HomePage() {
 <div className='homePageLayout'>
     <h1 className='titleHome'>I Titoli Del Momento!</h1>
 
-            <div className='homeSlayder' >
+            <div className='homeSlaider' >
                 <button onClick={prevSlide}>
                     &#10094;
                 </button>

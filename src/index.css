@@ -53,6 +53,7 @@ border: 1px solid black;
 background-color: white;
 margin: 5px;
 padding: 3px;
+cursor: pointer;
 
 
 }
@@ -71,7 +72,7 @@ padding: 3px;
   flex-wrap: wrap;
 }
 .col{
-  height: 600px;
+  
   width:calc(100% / 2);
   
 }
@@ -86,7 +87,7 @@ padding: 3px;
   border: 1px solid black;
 }
 .imgContainer{
-  height: 480px;
+  
   width: 430px;
   border: 1px solid black;
   display: flex;
@@ -107,6 +108,7 @@ padding: 3px;
   background-color: #f2f5f8;
   border: none;
   font-family: cursive;
+  cursor: pointer;
 
 }
 .mMovies{
@@ -121,6 +123,8 @@ padding: 3px;
   text-align: center;
   background-color: #f2f5f8;
   width: 430px;
+  position: relative;
+  overflow: hidden;
 }
 .noSelected{
   height: 480px;
@@ -131,11 +135,35 @@ padding: 3px;
   background-image: url(https://cdn.pixabay.com/photo/2016/04/01/10/56/camera-1300107_1280.png);
 }
 .sectionRow{
-  height: 25px;
   width: 100%;
-
+}
+.buttonDettails{
+  
+  position: absolute;
+  top: 12px;
+  right: 15px;
+ 
+  background-color: rgb(16, 126, 21);
+  color: white;
+  border: 1px solid black;
+  z-index: 2; 
+  width: 100px;
+  height: 25px;
+  cursor: pointer;
+  animation: bounce 1.5s infinite ease-in-out;
 }
 
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0); /* Posizione iniziale */
+  }
+  40% {
+    transform: translateY(-10px); /* Si alza un po' */
+  }
+  60% {
+    transform: translateY(-5px); /* Un piccolo "rimbalzo" */
+  }
+}
 
 /* homepage layout */
 .homePageLayout{
@@ -144,7 +172,7 @@ padding: 3px;
   background-image: url(https://cdn.pixabay.com/photo/2016/03/23/17/33/curtain-1275200_1280.png);
 }
 
-.homeSlayder{
+.homeSlaider{
 display: flex;
 justify-content: center;
 margin-top: 50px;
